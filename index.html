@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Minhas tarefas</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="cartao-aplicacao">
+
+        <header class="cabecalho">
+
+            <div class="perfil">
+
+                <label for="input-foto" class="foto-container">
+                    <img id="foto-perfil"
+                        src="Bianca1.jpg"
+                        alt="Foto de perfil">
+
+                    <span>
+                        <i class="fa-solid fa-camera"></i>
+                    </span>
+                </label>
+
+                <input type="file"
+                    id="input-foto"
+                    accept="image/*"
+                    hidden>
+
+                <div>
+                    <p>Olá! 👋</p>
+                    <h1>Minhas tarefas</h1>
+                </div>
+
+            </div>
+
+            <button class="botao-tema" id="botao-tema">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+        </header>
+
+
+    
+
+        <!-- Adicionar tarefa -->
+
+        <div class="entrada">
+
+            <input
+                type="text"
+                id="campo-tarefa"
+                placeholder="Digite uma tarefa..."
+                maxlength="60"
+            >
+
+            <select id="prioridade">
+                <option value="baixa">🟢 Baixa</option>
+                <option value="media" selected>🟡 Média</option>
+                <option value="alta">🔴 Alta</option>
+            </select>
+
+            <button id="botao-adicionar">
+                <i class="fa-solid fa-plus"></i>
+                Adicionar
+            </button>
+
+        </div>
+
+
+        <!-- Filtros -->
+
+        <div class="filtros">
+
+            <button class="filtro ativo" data-filtro="todas">
+                Todas
+            </button>
+
+            <button class="filtro" data-filtro="pendentes">
+                Pendentes
+            </button>
+
+            <button class="filtro" data-filtro="concluidas">
+                Concluídas
+            </button>
+
+        </div>
+
+
+        <!-- Tarefas -->
+
+        <ul id="lista-tarefas"></ul>
+
+
+        <footer>
+
+            <span id="contador-tarefas">
+                0 tarefas
+            </span>
+
+            <button id="botao-limpar">
+                Limpar concluídas
+            </button>
+
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

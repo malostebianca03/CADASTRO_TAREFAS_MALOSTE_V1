@@ -1,0 +1,406 @@
+:root {
+    --fundo: #e9e6ff;
+    --cartao: white;
+    --texto: #333;
+    --cinza: #777;
+    --borda: #ddd;
+    --item: #f5f5f5;
+    --principal: #6c5ce7;
+    --principal-hover: #5748c9;
+    --vermelho: #e74c3c;
+}
+
+
+/* Modo escuro */
+
+body.modo-escuro {
+    --fundo: #20202b;
+    --cartao: #2c2c3a;
+    --texto: #f5f5f5;
+    --cinza: #aaa;
+    --borda: #444;
+    --item: #39394a;
+}
+
+
+/* Configurações gerais */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background: var(--fundo);
+    color: var(--texto);
+
+    transition: 0.3s;
+}
+
+
+/* Cartão principal */
+
+.cartao-aplicacao {
+    width: 100%;
+    max-width: 600px;
+
+    background: var(--cartao);
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Cabeçalho */
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+
+.perfil {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.perfil p {
+    color: var(--cinza);
+    font-size: 14px;
+}
+
+
+.perfil h1 {
+    font-size: 23px;
+}
+
+
+.foto-container {
+    width: 60px;
+    height: 60px;
+
+    position: relative;
+
+    cursor: pointer;
+}
+
+
+.foto-container img {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 3px solid var(--principal);
+}
+
+
+.foto-container span {
+    position: absolute;
+
+    right: -2px;
+    bottom: -2px;
+
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--principal);
+    color: white;
+
+    font-size: 10px;
+}
+
+
+.botao-tema {
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--item);
+    color: var(--texto);
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+
+.botao-tema:hover {
+    background: var(--principal);
+    color: white;
+}
+
+
+
+/* Área de adicionar */
+
+.entrada {
+    display: grid;
+
+    grid-template-columns: 1fr auto auto;
+
+    gap: 8px;
+
+    margin-bottom: 18px;
+}
+
+
+input,
+select {
+    padding: 11px;
+
+    border: 1px solid var(--borda);
+
+    border-radius: 9px;
+
+    background: var(--cartao);
+
+    color: var(--texto);
+
+    outline: none;
+}
+
+
+input:focus,
+select:focus {
+    border-color: var(--principal);
+}
+
+
+#botao-adicionar {
+    border: none;
+
+    padding: 10px 15px;
+
+    border-radius: 9px;
+
+    background: var(--principal);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+
+#botao-adicionar:hover {
+    background: var(--principal-hover);
+}
+
+
+/* Filtros */
+
+.filtros {
+    display: flex;
+    gap: 7px;
+
+    margin-bottom: 15px;
+}
+
+
+.filtro {
+    border: none;
+
+    padding: 7px 12px;
+
+    border-radius: 15px;
+
+    background: var(--item);
+
+    color: var(--cinza);
+
+    cursor: pointer;
+}
+
+
+.filtro.ativo {
+    background: var(--principal);
+    color: white;
+}
+
+
+/* Lista */
+
+#lista-tarefas {
+    list-style: none;
+
+    max-height: 300px;
+
+    overflow-y: auto;
+}
+
+
+.item-tarefa {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 12px;
+
+    margin-bottom: 9px;
+
+    background: var(--item);
+
+    border-radius: 10px;
+
+    border-left: 4px solid var(--principal);
+}
+
+
+/* Cores das prioridades */
+
+.item-tarefa.prioridade-alta {
+    border-left-color: #e74c3c;
+}
+
+
+.item-tarefa.prioridade-media {
+    border-left-color: #f1c40f;
+}
+
+
+.item-tarefa.prioridade-baixa {
+    border-left-color: #2ecc71;
+}
+
+
+.conteudo-tarefa {
+    min-width: 0;
+}
+
+
+.conteudo-tarefa span {
+    word-break: break-word;
+}
+
+
+.item-tarefa.concluido span {
+    text-decoration: line-through;
+    color: var(--cinza);
+}
+
+
+/* Botões da tarefa */
+
+.acoes {
+    display: flex;
+    gap: 4px;
+}
+
+
+.botao-acao {
+    width: 32px;
+    height: 32px;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--cinza);
+
+    cursor: pointer;
+
+    border-radius: 6px;
+}
+
+
+.botao-acao:hover {
+    background: var(--borda);
+    color: var(--principal);
+}
+
+
+.botao-excluir:hover {
+    color: var(--vermelho);
+}
+
+
+/* Rodapé */
+
+footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 15px;
+
+    color: var(--cinza);
+
+    font-size: 13px;
+}
+
+
+#botao-limpar {
+    border: none;
+
+    background: transparent;
+
+    color: var(--vermelho);
+
+    cursor: pointer;
+}
+
+
+#botao-limpar:hover {
+    text-decoration: underline;
+}
+
+
+/* Celular */
+
+@media (max-width: 600px) {
+
+    .cartao-aplicacao {
+        padding: 20px;
+    }
+
+
+    .entrada {
+        grid-template-columns: 1fr;
+    }
+
+
+    #botao-adicionar {
+        width: 100%;
+    }
+
+
+    .perfil h1 {
+        font-size: 20px;
+    }
+}
