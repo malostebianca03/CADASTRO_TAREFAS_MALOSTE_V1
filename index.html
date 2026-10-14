@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -38,7 +37,7 @@
                     hidden>
 
                 <div>
-                    <p>Olá! 👋</p>
+                    <p>Olá! </p>
                     <h1>Minhas tarefas</h1>
                 </div>
 
@@ -51,7 +50,19 @@
         </header>
 
 
-    
+        <div class="progresso-area">
+
+            <div class="progresso-topo">
+                <span>Progresso</span>
+                <span id="porcentagem">0%</span>
+            </div>
+
+            <div class="progresso">
+                <div class="barra" id="barra-progresso"></div>
+            </div>
+
+        </div>
+
 
         <!-- Adicionar tarefa -->
 
@@ -65,9 +76,9 @@
             >
 
             <select id="prioridade">
-                <option value="baixa">🟢 Baixa</option>
-                <option value="media" selected>🟡 Média</option>
-                <option value="alta">🔴 Alta</option>
+                <option value="baixa">🔴Baixa</option>
+                <option value="media" selected>🟡Média</option>
+                <option value="alta">🟢Alta</option>
             </select>
 
             <button id="botao-adicionar">
@@ -113,6 +124,63 @@
             </button>
 
         </footer>
+
+    </div>
+
+
+    <button class="botao-novidades" id="botao-novidades">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        Novidades
+    </button>
+
+
+    <div class="fundo-modal" id="modal-novidades" hidden>
+
+        <section class="modal" role="dialog" aria-modal="true" aria-labelledby="titulo-modal">
+
+            <header class="modal-cabecalho">
+                <h2 id="titulo-modal">O que o app já faz</h2>
+
+                <button class="botao-fechar" id="botao-fechar-modal" aria-label="Fechar">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </header>
+
+            <div class="modal-corpo">
+
+                <h3>Salvamento</h3>
+                <ul>
+                    <li>As tarefas ficam salvas no navegador e continuam lá depois de recarregar a página.</li>
+                    <li>O tema claro ou escuro escolhido também fica salvo.</li>
+                    <li>A foto de perfil escolhida fica salva e volta sozinha ao abrir o site.</li>
+                </ul>
+
+                <h3>Organização</h3>
+                <ul>
+                    <li>Prioridade baixa, média ou alta em cada tarefa, com uma cor diferente na lateral.</li>
+                    <li>Filtros Todas, Pendentes e Concluídas para ver só o que interessa.</li>
+                    <li>Barra de progresso com a porcentagem de tarefas concluídas.</li>
+                    <li>Contador no rodapé com quantas estão pendentes e quantas foram concluídas.</li>
+                </ul>
+
+                <h3>Ações nas tarefas</h3>
+                <ul>
+                    <li>Concluir uma tarefa e desmarcar, caso tenha marcado sem querer.</li>
+                    <li>Editar o nome de uma tarefa que já foi criada.</li>
+                    <li>Excluir uma tarefa ou limpar todas as concluídas de uma vez.</li>
+                    <li>Adicionar tarefas apertando Enter, sem precisar clicar no botão.</li>
+                </ul>
+
+                <h3>Personalização</h3>
+                <ul>
+                    <li>Foto de perfil redonda que pode ser trocada clicando nela.</li>
+                    <li>Modo escuro com um clique no botão da lua.</li>
+                    <li>Layout que se ajusta ao celular.</li>
+                </ul>
+
+            </div>
+
+        </section>
 
     </div>
 

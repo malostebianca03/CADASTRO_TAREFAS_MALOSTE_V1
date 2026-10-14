@@ -40,7 +40,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    padding: 20px;
+    padding: 20px 20px 90px;
 
     background: var(--fundo);
     color: var(--texto);
@@ -157,6 +157,48 @@ body {
 .botao-tema:hover {
     background: var(--principal);
     color: white;
+}
+
+
+/* Barra de progresso */
+
+.progresso-area {
+    margin-bottom: 20px;
+}
+
+
+.progresso-topo {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 6px;
+
+    color: var(--cinza);
+
+    font-size: 13px;
+}
+
+
+.progresso {
+    height: 8px;
+
+    border-radius: 10px;
+
+    background: var(--item);
+
+    overflow: hidden;
+}
+
+
+.barra {
+    height: 100%;
+    width: 0%;
+
+    border-radius: 10px;
+
+    background: var(--principal);
+
+    transition: width 0.4s;
 }
 
 
@@ -378,6 +420,176 @@ footer {
 
 #botao-limpar:hover {
     text-decoration: underline;
+}
+
+
+/* Botão flutuante de novidades */
+
+.botao-novidades {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: linear-gradient(135deg, var(--principal), #a29bfe);
+
+    color: white;
+
+    font-weight: bold;
+    font-size: 14px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(108, 92, 231, 0.4);
+
+    transition: transform 0.15s;
+}
+
+
+.botao-novidades:hover {
+    transform: translateY(-3px);
+}
+
+
+.botao-novidades:focus-visible,
+.botao-fechar:focus-visible {
+    outline: 3px solid var(--principal);
+    outline-offset: 2px;
+}
+
+
+/* Janela de novidades */
+
+.fundo-modal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(20, 16, 40, 0.55);
+}
+
+
+.fundo-modal[hidden] {
+    display: none;
+}
+
+
+.modal {
+    width: 100%;
+    max-width: 500px;
+    max-height: 85vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--cartao);
+    color: var(--texto);
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+
+    overflow: hidden;
+}
+
+
+.modal-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 22px;
+
+    border-bottom: 1px solid var(--borda);
+}
+
+
+.modal-cabecalho h2 {
+    font-size: 18px;
+}
+
+
+.botao-fechar {
+    width: 34px;
+    height: 34px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--item);
+    color: var(--texto);
+
+    cursor: pointer;
+}
+
+
+.botao-fechar:hover {
+    background: var(--principal);
+    color: white;
+}
+
+
+.modal-corpo {
+    padding: 6px 22px 22px;
+
+    overflow-y: auto;
+}
+
+
+.modal-corpo h3 {
+    margin: 18px 0 8px;
+
+    font-size: 15px;
+
+    color: var(--principal);
+}
+
+
+.modal-corpo ul {
+    list-style: none;
+}
+
+
+.modal-corpo li {
+    position: relative;
+
+    padding: 6px 0 6px 20px;
+
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+
+.modal-corpo li::before {
+    content: "";
+
+    position: absolute;
+
+    left: 2px;
+    top: 13px;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #2ecc71;
 }
 
 

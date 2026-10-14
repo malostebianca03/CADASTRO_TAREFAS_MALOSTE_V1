@@ -21,6 +21,10 @@ const fotoPerfil = document.getElementById("foto-perfil");
 
 const filtros = document.querySelectorAll(".filtro");
 
+const botaoNovidades = document.getElementById("botao-novidades");
+const modalNovidades = document.getElementById("modal-novidades");
+const botaoFecharModal = document.getElementById("botao-fechar-modal");
+
 
 //
 // FASE 2: Gerenciamento de Estado
@@ -517,6 +521,56 @@ inputFoto.onchange = function(evento) {
 
     leitor.readAsDataURL(arquivo);
 };
+
+
+function abrirNovidades() {
+
+    modalNovidades.hidden = false;
+
+    botaoFecharModal.focus();
+}
+
+
+function fecharNovidades() {
+
+    modalNovidades.hidden = true;
+
+    botaoNovidades.focus();
+}
+
+
+botaoNovidades.onclick =
+    abrirNovidades;
+
+botaoFecharModal.onclick =
+    fecharNovidades;
+
+
+modalNovidades.addEventListener(
+    "click",
+    function(evento) {
+
+        if (evento.target === modalNovidades) {
+
+            fecharNovidades();
+        }
+    }
+);
+
+
+document.addEventListener(
+    "keydown",
+    function(evento) {
+
+        if (
+            evento.key === "Escape" &&
+            !modalNovidades.hidden
+        ) {
+
+            fecharNovidades();
+        }
+    }
+);
 
 
 //
